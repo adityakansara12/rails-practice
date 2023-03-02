@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+.width {
+  max-width: 600px;
+}
+
+a {
+  text-decoration: none;
+}
+
+p > a:hover {
+  color: white;
+}
+
+p > a {
+  color: white;
+}
