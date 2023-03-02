@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Hello <%= @name %> from Simform.</h1>
+    <table class="table">
+        <tr class="tr">
+            <th class="td">Name</th>
+            <td class="td"><%= @name %></td>
+        </tr>
+        <tr class="tr">
+            <th class="td">Date of Birth</th>
+            <td class="td"><%= @dob %></td>
+        </tr>
+        <tr class="tr">
+            <th class="td">Hobbies</th>
+            <td class="td">
+                <% @hobbies.each_with_index do |single, index|
+                    if index == @hobbies.size - 1 %>
+                        <%= single %>
+                    <% else %>
+                        <%= single + ' ,' %>
+                    <% end %>
+                <% end %>
+            </td>
+        </tr>
+        <tr class="tr">
+            <th class="td">College</th>
+            <td class="td"><%= @college %></td>
+        </tr>
+    </table>
+</div>
