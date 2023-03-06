@@ -1,0 +1,11 @@
+
+<div>
+    <h2>Title: <%= @product.title %></h2>
+    <h5>Description: <%= @product.description %></h5>
+    <p class="btn btn-primary"><%= link_to  "Edit", edit_product_path(@product) %></p>
+    <p class="btn btn-primary"><%= link_to  "Delete", product_path(@product), data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+        } %></p>
+    <p class="btn btn-primary"><%= link_to  "All Products", products_path %></p>
+</div>

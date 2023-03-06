@@ -14,16 +14,18 @@
  *= require_self
  */
 
-.container {
-  text-align: center;
+.width {
+  max-width: 600px;
 }
 
-.table {
-  margin: 0px auto;
-  border: 1px solid black;
+a {
+  text-decoration: none;
 }
 
-.tr,
-.td {
-  border: 1px solid black;
+p > a:hover {
+  color: white;
+}
+
+p > a {
+  color: white;
 }
