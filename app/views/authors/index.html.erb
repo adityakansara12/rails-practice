@@ -1,0 +1,26 @@
+<h1>Authors</h1>
+
+<table class="table table-bordered w-50 m-auto mb-2">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @authors.each do |author| %>
+            <tr>
+                <td><%= author.id %></td>
+                <td><%= link_to (author.first_name + ' ' + author.last_name), author_path(author) %></td>
+                <td><%= link_to "Edit", edit_author_path(author), :class => "btn btn-primary m-0" %>
+                    <%= link_to "Delete", author_path(author), data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                    }, :class => "btn btn-primary m-0" %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<p class="btn btn-primary"><%= link_to  "New author", new_author_path %></p>

@@ -1,0 +1,22 @@
+<h1 class="text-center">New Book</h1>
+
+<%= form_with model: @book do |form| %>
+    <div class="input-group mb-3">
+        <%= form.label :name, :class => 'input-group-text' %><br />
+        <%= form.text_field :name, :class => 'form-control' %>
+    </div>
+
+    <div class="input-group mb-3">
+        <%= form.label :price, :class => 'input-group-text' %><br />
+        <%= form.number_field :price, in: 0.0..9999.99, step: 0.01, :class => 'form-control' %>
+    </div>
+
+    <div class="input-group mb-3">
+        <%= form.label :author_id, :class => 'input-group-text' %><br />
+        <%= form.select :author_id, @authors, :class => 'form-control' %>
+    </div>
+
+    <div class="input-group mb-3">
+        <%= form.submit :class => 'btn-primary rounded p-1 px-2' %>
+    </div>
+<% end %>
