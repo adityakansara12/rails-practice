@@ -31,6 +31,7 @@ class BooksController < ApplicationController
     Author.all.each do |a|
       @authors.append([a.first_name + ' ' + a.last_name, a.id])
     end
+
     @author = Author.find_by(id: @book.author_id).id
   end
 

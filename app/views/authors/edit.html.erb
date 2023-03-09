@@ -1,27 +1,3 @@
 <h1 class="text-center">Edit Author</h1>
 
-<%= form_with model: @author do |form| %>
-    <div class="input-group mb-3">
-        <%= form.label :first_name, :class => 'input-group-text' %><br />
-        <%= form.text_field :first_name, :class => 'form-control' %>
-    </div>
-
-    <div class="input-group mb-3">
-        <%= form.label :last_name, :class => 'input-group-text' %><br />
-        <%= form.text_field :last_name, :class => 'form-control' %>
-    </div>
-
-    <div class="input-group mb-3">
-        <%= form.label :date_of_birth, :class => 'input-group-text' %><br />
-        <%= form.date_field :date_of_birth, :class => 'form-control' %>
-    </div>
-
-    <div class="input-group mb-3">
-        <%= form.label :email, :class => 'input-group-text' %><br />
-        <%= form.email_field :email, :class => 'form-control' %>
-    </div>
-
-    <div class="input-group mb-3">
-        <%= form.submit :class => 'btn-primary rounded p-1 px-2' %>
-    </div>
-<% end %>
+<%= render "form", author: @author %>
