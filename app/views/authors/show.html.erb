@@ -1,0 +1,41 @@
+
+<div>
+  <h2>First Name: <%= @author.first_name %></h2>
+  <h5>Last Name: <%= @author.last_name %></h5>
+  <h5>Date of Birth: <%= @author.date_of_birth %></h5>
+  <h5>Email: <%= @author.email %></h5>
+  <p class="btn btn-warning"><%= link_to  "Edit", edit_author_path(@author) %></p>
+  <p class="btn btn-danger"><%= link_to  "Delete", author_path(@author), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+    } %>
+  </p>
+  <p class="btn btn-info"><%= link_to  "All Authors", authors_path %></p>
+
+
+  <h4 class="pt-5" >Books by: <%= @author.first_name + ' ' + @author.last_name %></h4>
+
+  <table class="table table-bordered w-50 m-auto mb-2">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.id %></td>
+        <td><%= link_to book.name, book_path(book) %></td>
+        <td><%= link_to "Edit", edit_book_path(book), :class => "btn btn-warning m-0" %>
+          <%= link_to "Delete", book_path(book), data: {
+              turbo_method: :delete,
+              turbo_confirm: "Are you sure?"
+          }, :class => "btn btn-danger m-0" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>
