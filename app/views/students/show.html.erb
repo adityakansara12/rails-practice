@@ -1,0 +1,15 @@
+
+<div>
+
+  <h2>First Name: <%= @student.first_name %></h2>
+  <h5>Last Name: <%= @student.last_name %></h5>
+  <h5>Birthdate: <%= @student.birthdate %></h5>
+  <h5>Department: <%= @student.department %></h5>
+  <p class="btn btn-warning"><%= link_to  "Edit", edit_student_path(@student) %></p>
+  <p class="btn btn-danger"><%= link_to  "Delete", student_path(@student), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+    } %>
+  </p>
+  <p class="btn btn-info"><%= link_to  "All Students", students_path %></p>
+</div>
