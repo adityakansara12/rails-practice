@@ -1,0 +1,27 @@
+<h1>Faculties</h1>
+
+<table class="table table-bordered w-50 m-auto mb-2">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @faculties.each do |faculty| %>
+      <tr>
+        <td><%= faculty.id %></td>
+        <td><%= link_to (faculty.designation + ' ' + faculty.first_name + ' ' + faculty.last_name),
+                        faculty_path(faculty) %></td>
+        <td><%= link_to "Edit", edit_faculty_path(faculty), :class => "btn btn-warning m-0" %>
+          <%= link_to "Delete", faculty_path(faculty), data: {
+              turbo_method: :delete,
+              turbo_confirm: "Are you sure?"
+          }, :class => "btn btn-danger m-0" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<p class="btn btn-primary"><%= link_to  "New Faculty", new_faculty_path %></p>

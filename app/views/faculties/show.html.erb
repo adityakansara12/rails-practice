@@ -1,0 +1,14 @@
+
+<div>
+  <h2>Name: <%= @faculty.designation + ' ' + @faculty.first_name + ' ' + @faculty.last_name %></h2>
+  <h5>Birthdate: <%= @faculty.birthdate %></h5>
+  <h5>Email: <%= @faculty.email %></h5>
+  <h5>Phone: <%= @faculty.phone %></h5>
+  <p class="btn btn-warning"><%= link_to  "Edit", edit_faculty_path(@faculty) %></p>
+  <p class="btn btn-danger"><%= link_to  "Delete", faculty_path(@faculty), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+    } %>
+  </p>
+  <p class="btn btn-info"><%= link_to  "All Faculties", faculties_path %></p>
+</div>

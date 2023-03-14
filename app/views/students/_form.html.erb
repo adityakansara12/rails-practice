@@ -1,0 +1,35 @@
+<%= form_with model: student do |form| %>
+  <div class="input-group mb-3">
+    <%= form.label :first_name, :class => 'input-group-text' %><br />
+    <%= form.text_field :first_name, :class => 'form-control' %>
+  </div>
+  <%= render "error", student: student, field: :first_name %>
+
+  <div class="input-group mb-3">
+    <%= form.label :last_name, :class => 'input-group-text' %><br />
+    <%= form.text_field :last_name, :class => 'form-control' %>
+  </div>
+  <%= render "error", student: student, field: :last_name %>
+
+  <div class="input-group mb-3">
+    <%= form.label :birthdate, :class => 'input-group-text' %><br />
+    <%= form.date_field :birthdate, :class => 'form-control' %>
+  </div>
+  <%= render "error", student: student, field: :birthdate %>
+
+  <div class="input-group mb-3">
+    <%= form.label :department, :class => 'input-group-text' %><br />
+    <%= form.select :department, StudentsHelper::DEPARTMENT.map{|k,v| v}, :class => 'form-control' %>
+  </div>
+  <%= render "error", student: student, field: :department %>
+
+  <div class="form-check mb-3">
+    <%= form.check_box :terms_of_usage, class: "form-check-input"%>
+    <%= form.label :terms_of_usage, class: "form-check-label" %>
+  </div>
+  <%= render "error", student: student, field: :terms_of_usage %>
+
+  <div class="input-group mb-3">
+    <%= form.submit :class => 'btn-success rounded p-1 px-2' %>
+  </div>
+<% end %>

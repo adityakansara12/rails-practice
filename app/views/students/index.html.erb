@@ -1,0 +1,26 @@
+<h1>Students</h1>
+
+<table class="table table-bordered w-50 m-auto mb-2">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.id %></td>
+        <td><%= link_to (student.first_name + ' ' + student.last_name), student_path(student) %></td>
+        <td><%= link_to "Edit", edit_student_path(student), :class => "btn btn-warning m-0" %>
+          <%= link_to "Delete", student_path(student), data: {
+              turbo_method: :delete,
+              turbo_confirm: "Are you sure?"
+          }, :class => "btn btn-danger m-0" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<p class="btn btn-primary"><%= link_to  "New student", new_student_path %></p>
