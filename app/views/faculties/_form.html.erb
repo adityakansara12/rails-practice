@@ -1,0 +1,41 @@
+<%= form_with model: faculty do |form| %>
+  <div class="input-group mb-3">
+    <%= form.label :designation, :class => 'input-group-text' %><br />
+    <%= form.select :designation, FacultiesHelper::DESIGNATION.map {|k,v| [k,v]}, :class => 'form-select' %>
+  </div>
+  <%= render "error", faculty: faculty, field: :designation %>
+
+  <div class="input-group mb-3">
+    <%= form.label :first_name, :class => 'input-group-text' %><br />
+    <%= form.text_field :first_name, :class => 'form-control' %>
+  </div>
+  <%= render "error", faculty: faculty, field: :first_name %>
+
+  <div class="input-group mb-3">
+    <%= form.label :last_name, :class => 'input-group-text' %><br />
+    <%= form.text_field :last_name, :class => 'form-control' %>
+  </div>
+  <%= render "error", faculty: faculty, field: :last_name %>
+
+  <div class="input-group mb-3">
+    <%= form.label :birthdate, :class => 'input-group-text' %><br />
+    <%= form.date_field :birthdate, :class => 'form-control' %>
+  </div>
+  <%= render "error", faculty: faculty, field: :birthdate %>
+
+  <div class="input-group mb-3">
+    <%= form.label :email, :class => 'input-group-text' %><br />
+    <%= form.email_field :email, :class => 'form-control' %>
+  </div>
+  <%= render "error", faculty: faculty, field: :email %>
+
+  <div class="input-group mb-3">
+    <%= form.label :phone, :class => 'input-group-text' %><br />
+    <%= form.text_field :phone, :class => 'form-control' %>
+  </div>
+  <%= render "error", faculty: faculty, field: :phone %>
+
+  <div class="input-group mb-3">
+    <%= form.submit :class => 'btn-success rounded p-1 px-2' %>
+  </div>
+<% end %>

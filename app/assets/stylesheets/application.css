@@ -29,3 +29,7 @@ p > a:hover {
 p > a {
   color: white;
 }
+
+.form-check {
+  width: 150px;
+}
