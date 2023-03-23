@@ -17,6 +17,12 @@
   </div>
   <%= render "error", student: student, field: :birthdate %>
 
+    <div class="input-group mb-3">
+    <%= form.label :email, :class => 'input-group-text' %><br />
+    <%= form.text_field :email, :class => 'form-control' %>
+  </div>
+  <%= render "error", student: student, field: :email %>
+
   <div class="input-group mb-3">
     <%= form.label :department, :class => 'input-group-text' %><br />
     <%= form.select :department, StudentsHelper::DEPARTMENT.map{|k,v| v}, :class => 'form-control' %>

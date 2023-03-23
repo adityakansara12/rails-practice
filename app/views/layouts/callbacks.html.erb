@@ -1,0 +1,33 @@
+<div class="callbacks">
+  <% if (controller.controller_name == "faculties" || controller.controller_name == "students") %>
+    <% count = 0 %>
+    <% $callbacks.each do |action, callbacks| %>
+      <% unless callbacks.empty? %>
+        <table class="table table-bordered w-50 m-auto mb-2">
+          <thead>
+            <tr>
+              <th colspan=2>Action: <%= action %></th>
+            </tr>
+            <tr>
+              <th scope="col">Callback</th>
+              <th scope="col">Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% callbacks.each do |callback| %>
+              <tr>
+                <td><%= callback.keys[0] %></td>
+                <td><%= callback.values[0] %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <% if $callbacks.size-1 == count %>
+          <p class="btn btn-warning clear-btn"> Clear </p>
+        <% end %>
+      <% end %>
+      <% count += 1 %>
+    <% end %>
+  <% end %>
+</div>
+<%= yield %>
