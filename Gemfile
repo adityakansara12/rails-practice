@@ -36,6 +36,17 @@ gem 'email_validator'
 # Date validator gem
 gem 'validates_timeliness', '~> 7.0.0.beta1'
 
+# Password Authentication
+gem 'bcrypt', '~> 3.1', '>= 3.1.18'
+
+gem 'pry', '~> 0.14.2'
+
+gem 'devise', '~> 4.9'
+
+gem 'prawn'
+
+gem 'prawn-table'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

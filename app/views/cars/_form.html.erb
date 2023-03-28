@@ -1,0 +1,17 @@
+<%= form_with model: car do |form| %>
+  <div class="input-group mb-3">
+    <%= form.label :company, :class => 'input-group-text' %><br />
+    <%= form.text_field :company, :class => 'form-control' %>
+  </div>
+  <%= render "error", car: car, field: :company%>
+
+  <div class="input-group mb-3">
+    <%= form.label :price, :class => 'input-group-text' %><br />
+    <%= form.text_field :price, :class => 'form-control' %>
+  </div>
+  <%= render "error", car: car, field: :price%>
+
+  <div class="input-group mb-3">
+    <%= form.submit :class => 'btn-success rounded p-1 px-2' %>
+  </div>
+<% end %>

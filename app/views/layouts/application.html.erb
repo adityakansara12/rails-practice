@@ -14,8 +14,10 @@
   <body>
 
     <div class="container p-5 text-center">
-      <div class="table-reponsive position-relative top-10">
-        <%=render template: "layouts/callbacks"%>
+      <div class="table-reponsive position-relative top-10 w-75 m-auto">
+        <%= render template: "layouts/flash" %>
+        <%= render template: "layouts/callbacks" %>
+        <%= yield %>
       </div>
     </div>
     <script>
