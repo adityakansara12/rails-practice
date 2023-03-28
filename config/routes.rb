@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   # Defines the root path route ("/")
-  root 'faculties#index'
+  root 'sessions#login'
 
   # Product Routes
   resources :products
@@ -18,4 +16,16 @@ Rails.application.routes.draw do
 
   # Faculty Routes
   resources :faculties
+
+  # Users Routes
+  resources :users, only: %i[new create edit update show destroy]
+
+  get '/login', to: 'sessions#login'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#logout'
+
+  # Cars Routes
+  resources :cars
+  get '/search', to: 'cars#search'
+  get '/download', to: 'cars#download_pdf'
 end

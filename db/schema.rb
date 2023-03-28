@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_13_050943) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_23_115558) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,6 +38,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_050943) do
     t.index ["author_id"], name: "index_books_on_author_id"
   end
 
+  create_table "cars", force: :cascade do |t|
+    t.string "company"
+    t.string "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "faculties", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -47,6 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_050943) do
     t.string "designation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "age"
+    t.integer "update_counter", default: 0
   end
 
   create_table "products", force: :cascade do |t|
@@ -62,6 +71,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_050943) do
     t.date "birthdate"
     t.string "department"
     t.boolean "terms_of_usage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+    t.integer "update_counter", default: 0
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "role", default: "employee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

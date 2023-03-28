@@ -10,10 +10,6 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    @authors = []
-    Author.all.each do |a|
-      @authors.append([a.first_name + ' ' + a.last_name, a.id])
-    end
   end
 
   def create

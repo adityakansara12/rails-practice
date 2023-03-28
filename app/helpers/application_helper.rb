@@ -1,6 +1,5 @@
 module ApplicationHelper
-  def birthdate_cannot_be_in_the_future
-    return unless birthdate.present? && birthdate > Date.today
-    errors.add(:birthdate, "can't be in the future")
+  def logged_in?
+    !!session[:user_id]
   end
 end
